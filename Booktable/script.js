@@ -9,7 +9,7 @@ var bookPositions = {};
 var gameScreen = document.getElementById("game");
 var totalBooks, correctAnswer;
 var ruletraitOrders = [`ABABACA`,`AABAACB`, `AABCBAA`, `BAACAAB`];
-var bookHeights = `${100/3*4.9/7.5}vw`;
+var bookHeights = `500px`;
 var glassActive = true;
 
 Array.from(allInputs).forEach(function(singleInput){
@@ -355,7 +355,7 @@ function startGame(permutationArray, startData) {
 	];
 	Array.from(indicatorLights).forEach(function(singleIndicator){
 		// singleIndicator.style.height = `7vh`;
-		singleIndicator.style.width = `5vw`;
+		singleIndicator.style.width = `100px`;
 		Array.from(allCheckboxes).forEach(function(singleInput){
 			let indicatorLight = document.createElement("div");
 			indicatorLight.classList.add(`indicator`);
@@ -369,13 +369,13 @@ function startGame(permutationArray, startData) {
 				}
 			}
 
-			indicatorLight.style.width = `4vh`;
-			indicatorLight.style.height = `4vh`;
+			indicatorLight.style.width = `40px`;
+			indicatorLight.style.height = `40px`;
 			singleIndicator.appendChild(indicatorLight);
 		});
 	});
 	gameScreen.style.height = bookHeights;
-	gameScreen.style.width = bookHeights.replace(`vw`,``) * 1.3 + `vw`;
+	gameScreen.style.width = bookHeights.replace(`px`,``) * 1.3 + `px`;
 	let bookNum = 1;
 	let actualSizes = [];
 	for (let i = 0; i < totalBooks; i++) {

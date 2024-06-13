@@ -2,7 +2,6 @@ html {
 	background-color: whitesmoke;
 	background-image: url('./images/background.png');
 	background-size: cover;
-	background-repeat: no-repeat;
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; 
 	color: whitesmoke;
 }
@@ -14,8 +13,8 @@ html {
 	gap: 20px;
 	background-color: #464646;
 	padding: 50px;
-	width: 40vw;
-	height: 60vh;
+	width: 800px;
+	height: 575px;
 	left: 50%;
 	top: 45%;
 	transform: translate(-50%, -50%);
@@ -27,29 +26,23 @@ html {
 	background-color: #202b41;
 }
 
-.offGrid {
-	background-color: ghostwhite;
-	height: 10vh;
-	width: 10vh;
-}
-
 .tempButton {
 	z-index: -2;
 	position: absolute;
 	background-color: #464646;
 	margin: auto;
-	height: 3vh;
-	width: 5vh;
-	top: 75vh;
-	left: 70vw;
+	left: calc(50% + 435px);
+	top: calc(45% + 275px);
+	height: 40px;
+	width: 30px;
 }
 
 .panel {
 	position: absolute;
 	background-color: #181617;
 	box-shadow: inset 1em 1em 0.2em 0 rgba(0,0,0,0.5), inset -1em -1em 0.2em 0 rgba(0,0,0,0.5);
-	height: 60vh;
-	width: 20vw;
+	height: 550px;
+	width: 375px;
 	top: 15%;
 }
 

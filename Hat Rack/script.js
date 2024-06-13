@@ -2,7 +2,7 @@ var searchParams = new URLSearchParams(window.location.search);
 var pegsGone = false;
 var pegCount = [3,4];
 var playArea = document.getElementById("playArea");
-var hatHooks = {hatOne:0, hatTwo:10, hatThree:15, hatFour:-15};
+var hatHooks = {hatOne:0, hatTwo:10, hatThree:15, hatFour:-50};
 window.onload = (event) => {
   if(searchParams.size == 0) {
     const paramStr = "Booktable=false&Fuse%20Box1=false&Fuse%20Box2=false&Wall=false&Hat%20Rack1=false&Hat%20Rack2=false&Hat%20Rack3=false";
@@ -98,12 +98,11 @@ function dragElement(elmnt) {
     });
 
     elmnt.style.zIndex = 6;
-
-    if(event.target.gravity) {
-      clearInterval(event.target.gravity);
-      event.target.gravity = false;
-      event.target.timesBounced = 0;
-      event.target.speedY = 0;
+    if(event.target.parentElement.gravity) {
+      clearInterval(event.target.parentElement.gravity);
+      event.target.parentElement.gravity = false;
+      event.target.parentElement.timesBounced = 0;
+      event.target.parentElement.speedY = 0;
     }
 
     document.onmouseup = closeDragElement;

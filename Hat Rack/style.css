@@ -3,66 +3,60 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
+  user-select: none;
 }
 
 .playArea {
   display: grid;
-  padding-top: 8vh;
-  padding-left: 9.5vw;
+  padding-left: 115px;
+  padding-top: 65px;
   grid-template-columns: auto auto auto auto;
-  width: 44.5vw;
-  height: 65vh;
+  width: calc(902px - 115px);
+  height: calc(673px - 65px);
   margin: auto;
   background-position: center;
   background-image: url("./images/hatrack.png");
   background-size: contain;
   background-repeat:no-repeat;
+  grid-column-gap: 60px;
 }
 
 .hat {
   position: absolute;
-  width: 40vh;
+
+}
+
+.hat img{
+  height: 100%;
+  width: 100%;
 }
 
 .pegs {
-  width: 4vh;
-  height: 8vh;
+  width: 35px;
+  height: 89.9px;
   background-image: url("./images/peg.png");
-  background-size: 4vh 8vh;
+  background-size: 35px 89.9px;
   z-index: 2;
 }
 
 #hatOne {
   left: 20vw;
-  background-image: url("./images/fedora.png");
-  background-size: 40vh;
-  background-repeat: no-repeat;
-  height: 45vh;
+  width: 375px;
   z-index:3;
 }
 #hatTwo {
   left: 40vw;
-  background-image: url("./images/flatcap.png");
-  background-size: 40vh;
-  background-repeat: no-repeat;
-  height: 40vh;
+  width: 315px;
   z-index:4;
 }
 #hatThree {
   left: 60vw;
-  background-image: url("./images/mortarboard.png");
-  background-size: 50vh;
-  background-repeat: no-repeat;
-  height: 50vh;
-  width: 50vh;
+  width: 475px;
   z-index:5;
 }
 #hatFour {
   left: 80vw;
-  background-image: url("./images/visor.png");
-  background-size: 40vh;
-  background-repeat: no-repeat;
-  height: 45vh;
+  width: 275px;
   z-index:6;
 }
 
