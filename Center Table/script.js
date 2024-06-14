@@ -1,5 +1,12 @@
 window.onload = (event) => {
 //in case I want to make something run at launch
+  var searchParams = new URLSearchParams(window.location.search);
+  if(searchParams.size == 0) {
+    const paramStr = "Booktable=false&Fuse%20Box1=false&Fuse%20Box2=false&Wall=false&Hat%20Rack1=false&Hat%20Rack2=false&Hat%20Rack3=false";
+    searchParams = new URLSearchParams(paramStr);
+  }
+  let link = document.getElementById("backButton");
+  link.href += `?${searchParams.toString()}`;
   loadImages();
 }
 
