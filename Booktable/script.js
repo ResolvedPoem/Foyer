@@ -11,6 +11,7 @@ var totalBooks, correctAnswer;
 var ruletraitOrders = [`ABABACA`,`AABAACB`, `AABCBAA`, `BAACAAB`];
 var bookHeights = `500px`;
 var glassActive = true;
+var allCheckboxes = [{id:"rule1"}, {id:"rule2"}, {id:"rule3"}];
 
 Array.from(allInputs).forEach(function(singleInput){
   singleInput.addEventListener("keyup", function(event) {
@@ -330,15 +331,12 @@ function shuffle(array) {
 
 
 function startGame(permutationArray, startData) {
-	var inputSelector = document.getElementById('allData');
-	inputSelector.style.display = `none`;
 	correctAnswer = permutationArray;
 	var allTraits = startData.pop();
 	totalBooks = startData.reduce((accumulator, currentValue) => {
   		return accumulator + currentValue
 	},0);
 	let indicatorLights = document.getElementsByClassName(`indicators`);
-	let allCheckboxes = document.getElementsByClassName('checkboxes');
 	let photographs = document.getElementsByClassName('others');
 	let photographIterator = 0;
 	Array.from(photographs).forEach(function(photograph){
