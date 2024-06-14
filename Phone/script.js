@@ -66,7 +66,7 @@ function keypad(id) {
     screenText.innerHTML = '';
   }
   const number = STR_TO_NUM[id.toLowerCase()];
-  if(number == "#" && !questionsStarted) {
+  if(!questionsStarted) {
       questionsStarted = true;
       nextAudio();
   } else if(number == "*") {
