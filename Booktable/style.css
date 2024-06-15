@@ -19,6 +19,12 @@ html {
 	font-size: 32px;
 }
 
+.sticky {
+	position: absolute;
+	z-index: 5;
+	right: 5%;
+}
+
 .rules {
 	padding-bottom: 10px;
 	font-size: 18px;

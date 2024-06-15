@@ -403,6 +403,8 @@ function startGame(permutationArray, startData) {
 			var glassPosition = document.getElementById('glassPosition');
 			glassPosition.classList.add("glass");
 		} else {
+			var stickynote = document.getElementById('sticky');
+			stickynote.style.visibility = "hidden";
 			dragElement(bookDiv);	
 		}
 		

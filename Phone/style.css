@@ -125,6 +125,13 @@ html {
 	left: 85.5%;
 }
 
+#reciever {
+	top: 13%;
+	left: 46%;
+	width: 4vh;
+	height: 6vh;
+}
+
 .button2 {
   background-color: whitesmoke;
   border: none;

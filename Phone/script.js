@@ -4,8 +4,10 @@ var question1 = new Audio('./audio/q1.wav');
 var question2 = new Audio('./audio/q2.wav');
 var question3 = new Audio('./audio/q3.wav');
 var granted = new Audio('./audio/granted.wav');
+var thunk = new Audio('./audio/thunk.wav');
+var allAudios = [security, question1, question2, question3, granted];
 var buttonAudios = {};
-const STR_TO_NUM = {one: 1,  two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, zero: 0, star:"*", pound:"#"};
+const STR_TO_NUM = {one: 1,  two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, zero: 0, star:"*", pound:"#", reciever:"!"};
 for (var i = 0; i < Object.keys(STR_TO_NUM).length; i++) {
   let keyKeys = Object.keys(STR_TO_NUM);
   buttonAudios[keyKeys[i]] = new Audio(`./audio/beeps/${keyKeys[i]}.wav`);
@@ -66,10 +68,23 @@ function keypad(id) {
     screenText.innerHTML = '';
   }
   const number = STR_TO_NUM[id.toLowerCase()];
-  if(!questionsStarted) {
+  if(!questionsStarted && number == "1") {
       questionsStarted = true;
       nextAudio();
-  } else if(number == "*") {
+  } else if(number == "!") {
+      screenText.innerHTML = "";
+      allAudios[currentAudio].pause();
+      allAudios[currentAudio].currentTime = 0;
+      if(currentAudio == 0 || currentAudio == 1) {
+        questionsStarted = false;
+        currentAudio = -1;
+      }
+      if(voicemailaudio.started) {
+        voicemailaudio.pause();
+        voicemailaudio.currentTime = 0;
+        voicemailaudio.started = false;
+      }
+  } else if(number == "*" && questionsStarted) {
     if(currentAudio == 1 && screenText.innerHTML == `89`) {
       screenText.innerHTML += number;
       nextAudio();
@@ -85,6 +100,7 @@ function keypad(id) {
       link.href = link.href.split(`?`)[0];
       link.href += `?${searchParams.toString()}`;
       nextAudio();
+      setTimeout(() => {  thunk.play(); }, 1000);
     }
     else {
       repeatAudio();
@@ -102,7 +118,6 @@ function nextAudio() {
     voicemailaudio.started = false;
   }
  currentAudio++;
- let allAudios = [security, question1, question2, question3, granted];
  let allText = [`ACCESS REQUIRED`, `MAKE AND MODEL`, `UNIVERSITY`, `SISTER'S NAME`, 'ACCESS GRANTED'];
  if(currentAudio > 0) {
   allAudios[currentAudio-1].pause();
@@ -127,7 +142,6 @@ function repeatAudio() {
     voicemailaudio.currentTime = 0;
     voicemailaudio.started = false;
   }
-  let allAudios = [security, question1, question2, question3, granted];
   let allText = [`ACCESS REQUIRED`, `MAKE AND MODEL`, `UNIVERSITY`, `SISTER'S NAME`, 'ACCESS GRANTED'];
   allAudios[currentAudio].pause();
   allAudios[currentAudio].currentTime = 0;
