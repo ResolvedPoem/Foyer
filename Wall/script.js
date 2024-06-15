@@ -2,7 +2,7 @@ var searchParams = new URLSearchParams(window.location.search);
 window.onload = (event) => {
 //in case I want to make something run at launch
   var hat = document.getElementById(`hat`);
-  hat.addEventListener("click", takeHat);
+  hat.addEventListener("mousedown", takeHat);
   if(searchParams.size == 0) {
     const paramStr = "Booktable=false&Fuse%20Box1=false&Fuse%20Box2=false&Wall=false&Hat%20Rack1=false&Hat%20Rack2=false&Hat%20Rack3=false";
     searchParams = new URLSearchParams(paramStr);
