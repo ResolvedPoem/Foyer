@@ -17,6 +17,7 @@ html {
 }
 
 .imgcontainer {
+	visibility: hidden;
   position: absolute;
 }
 

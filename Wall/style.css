@@ -66,6 +66,7 @@ html {
 }
 
 .peg {
+	visibility: hidden;
 	position: absolute;
 	left:calc(50% - 4vh);
 	height: 8vh;

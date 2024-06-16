@@ -22,6 +22,7 @@ html {
 }
 
 .hat {
+	visibility: hidden;
 	top: 60%;
 	left: 3%;
 }

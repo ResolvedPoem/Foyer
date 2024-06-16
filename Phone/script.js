@@ -23,8 +23,8 @@ window.onload = (event) => {
     const paramStr = "Booktable=false&Fuse%20Box1=false&Fuse%20Box2=false&Wall=false&Hat%20Rack1=false&Hat%20Rack2=false&Hat%20Rack3=false";
     searchParams = new URLSearchParams(paramStr);
   }
-  if(searchParams.get("Hat Rack2") === "true") {
-    hat.style.visibility = "hidden";
+  if(searchParams.get("Hat Rack2") === "false") {
+    hat.style.visibility = "visible";
   }
   let link = document.getElementById("backButton");
   link.href += `?${searchParams.toString()}`;
@@ -93,7 +93,7 @@ function keypad(id) {
       screenText.innerHTML += number;
       nextAudio();
     }
-    if(currentAudio == 3 && screenText.innerHTML == `52`) {
+    if(currentAudio == 3 && screenText.innerHTML == `58`) {
       screenText.innerHTML += number;
       searchParams.set("Booktable", true);
       let link = document.getElementById("backButton");

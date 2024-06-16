@@ -3,6 +3,9 @@ var searchParams = new URLSearchParams(window.location.search);
 window.onload = (event) => {
 //in case I want to make something run at launch
   // loadImages();
+  Array.from(document.querySelectorAll(`.imgcontainer`)).forEach((imgcontainer) => {
+    imgcontainer.style.visibility = "visible";
+  });
   let hat = document.getElementById(`hat`);
   hat.style.width = `30vw`;
   hat.style.left = `58vw`;

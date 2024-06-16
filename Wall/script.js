@@ -7,13 +7,10 @@ window.onload = (event) => {
     const paramStr = "Booktable=false&Fuse%20Box1=false&Fuse%20Box2=false&Wall=false&Hat%20Rack1=false&Hat%20Rack2=false&Hat%20Rack3=false";
     searchParams = new URLSearchParams(paramStr);
   }
-  if(searchParams.get("Wall") === "false") {
-    Array.from(document.querySelectorAll(`.peg`)).forEach((peg) => {
-      peg.style.visibility = "hidden";
-    });
-  } else {
+  if(searchParams.get("Wall") === "true") {
     let i = 10;
     Array.from(document.querySelectorAll(`.peg`)).forEach((peg) => {
+      peg.style.visibility = "visible";
       peg.style.top = "0%";
       peg.style.left = i + "%";
       i += 25;
