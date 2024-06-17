@@ -32,6 +32,9 @@ function loadImages() {
     let leftPosition = Math.floor(Math.random() * ((window.innerWidth - imgContainer.clientWidth) + 1));
     imgContainer.style.zIndex = this.count;
     imgContainer.id = this.count;
+    if(imgContainer.id == 6) {
+      imgContainer.style.width = `800px`;
+    }
     imgContainer.style.top = topPosition + `px`;
     imgContainer.style.left = leftPosition + `px`;
     console.log(imgContainer);
